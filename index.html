@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Form</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+      integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container py-4">
+      <div class="card">
+        <h5 class="card-header">Payment form example</h5>
+        <div class="card-body">
+          <div
+            class="alert alert-danger d-none"
+            id="missingFieldsWarning"
+            role="alert"
+          >
+            Some fields are missing
+          </div>
+          <form
+            action="#"
+            method="post"
+            id="paymentForm"
+            class="needs-validation"
+            novalidate
+          >
+            <div class="row">
+              <div class="col-12 col-md-5 mb-3">
+                <label for="cardNumber" class="form-label">Card #</label>
+                <input
+                  type="text"
+                  name="cardNumber"
+                  id="cardNumber"
+                  class="form-control"
+                  placeholder="1234 5678 9012 3456"
+                  inputmode="numeric"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-3 mb-3">
+                <label for="cvcNumber" class="form-label">CVC #</label>
+                <input
+                  type="text"
+                  name="cvcNumber"
+                  id="cvcNumber"
+                  class="form-control"
+                  placeholder="123"
+                  inputmode="numeric"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <label for="paymentAmount" class="form-label">Amount</label>
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="paymentAmount"
+                    id="paymentAmount"
+                    placeholder="Amount"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6 mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6 mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6 mb-3">
+                <label for="cityName" class="form-label">City</label>
+                <input
+                  type="text"
+                  name="cityName"
+                  id="cityName"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="col-12 col-md-3 mb-3">
+                <label for="stateList" class="form-label">State</label>
+                <select class="form-select" name="stateList" id="stateList" required>
+                  <option value="" selected disabled>Pick a state</option>
+                  <option value="1">State 1</option>
+                  <option value="2">State 2</option>
+                  <option value="3">State 3</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-3 mb-3">
+                <label for="postalCode" class="form-label">Postal Code</label>
+                <input
+                  type="text"
+                  name="postalCode"
+                  id="postalCode"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6 mb-3">
+                <label class="form-label">Accepted cards</label>
+                <div class="border rounded-3 px-3 py-2 bg-body-tertiary">
+                  <div
+                    class="d-flex align-items-center justify-content-center gap-3 flex-wrap text-body-secondary fs-1"
+                  >
+                    <i
+                      class="fa-brands fa-cc-visa"
+                      aria-hidden="true"
+                      title="Visa"
+                    ></i>
+                    <i
+                      class="fa-brands fa-cc-mastercard"
+                      aria-hidden="true"
+                      title="Mastercard"
+                    ></i>
+                    <i
+                      class="fa-brands fa-cc-amex"
+                      aria-hidden="true"
+                      title="American Express"
+                    ></i>
+                    <i
+                      class="fa-brands fa-cc-diners-club"
+                      aria-hidden="true"
+                      title="Diners Club"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 mb-3">
+                <label for="messageArea" class="form-label">Message</label>
+                <textarea
+                  name="messageArea"
+                  id="messageArea"
+                  class="form-control"
+                  rows="3"
+                  required
+                ></textarea>
+                <div class="form-text">Add any notes here.</div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex align-items-center justify-content-end gap-2">
+            <button type="button" class="btn btn-secondary" form="paymentForm">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary" form="paymentForm">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
